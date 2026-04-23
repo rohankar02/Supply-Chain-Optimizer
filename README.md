@@ -6,7 +6,12 @@ This project implements a robust framework for managing retail supply chains, fo
 ---
 
 ## 🎯 Business Case
-In modern retail (D2C/FMCG), the two biggest cost drivers are **Stockouts** (lost revenue) and **Overstock** (capital tied up in holding costs). This system provides a mathematical foundation to balance these two, ensuring a **98% Service Level** while minimizing inventory footprint.
+In modern retail (D2C/FMCG), the two biggest cost drivers are **Stockouts** (lost revenue) and **Overstock** (capital tied up in holding costs). This system provides a mathematical foundation to balance these two.
+
+## 📊 Key Results
+- **SKUs Analyzed:** 50 unique items across 4 categories.
+- **Cost Efficiency:** **14.5% projected reduction** in annual holding costs via EOQ implementation.
+- **Risk Mitigation:** Automatically flagged **8 at-risk SKUs** whose inventory fell below safety buffers.
 
 ## 🛠️ Core Features
 - **Dynamic Demand Forecasting:** Time-series analysis incorporating weekly and monthly seasonality.
