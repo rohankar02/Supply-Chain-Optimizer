@@ -50,7 +50,7 @@ def generate_supply_chain_data(num_skus=50, days=365):
     df_sales = pd.concat(all_sales)
     
     # Save files
-    output_dir = Path("/Users/rohankar/.gemini/antigravity/scratch/Supply-Chain-Optimizer/data")
+    output_dir = Path(__file__).parent.parent / "data"
     sku_meta.to_csv(output_dir / "sku_metadata.csv", index=False)
     df_sales.to_csv(output_dir / "sales_history.csv", index=False)
     

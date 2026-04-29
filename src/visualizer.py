@@ -4,10 +4,10 @@ import seaborn as sns
 from pathlib import Path
 
 def create_visualizations():
+    DATA_DIR = Path(__file__).parent.parent / 'data'
     # Load data
-    results = pd.read_csv("/Users/rohankar/.gemini/antigravity/scratch/Supply-Chain-Optimizer/data/inventory_recommendations.csv")
-    sales = pd.read_csv("/Users/rohankar/.gemini/antigravity/scratch/Supply-Chain-Optimizer/data/sales_history.csv")
-    
+    results = pd.read_csv(DATA_DIR / "inventory_recommendations.csv")
+    sales = pd.read_csv(DATA_DIR / "sales_history.csv")
     # Setup Style
     plt.style.use('ggplot')
     sns.set_palette("viridis")
@@ -25,7 +25,7 @@ def create_visualizations():
     plt.ylabel('Risk Index (ROP / Current Stock)')
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig("/Users/rohankar/.gemini/antigravity/scratch/Supply-Chain-Optimizer/data/stockout_risk.png")
+    plt.savefig(DATA_DIR / "stockout_risk.png")
     
     # 2. Demand Seasonality Heatmap (Last 3 months)
     sales['date'] = pd.to_datetime(sales['date'])
@@ -41,7 +41,7 @@ def create_visualizations():
     sns.heatmap(pivot, annot=True, fmt=".0f", cmap="YlGnBu")
     plt.title('Demand Seasonality Heatmap (Weekly vs Monthly)', fontsize=15)
     plt.tight_layout()
-    plt.savefig("/Users/rohankar/.gemini/antigravity/scratch/Supply-Chain-Optimizer/data/demand_heatmap.png")
+    plt.savefig(DATA_DIR / "demand_heatmap.png")
     
     print("Visualizations saved to /data directory.")
 
